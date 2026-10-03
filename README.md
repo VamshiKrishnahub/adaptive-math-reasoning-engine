@@ -173,5 +173,5 @@ Both tiers are already deployed; this section is how to rebuild them.
 
 ## Author
 
-Built by **Amruth Ganta** ([@amruth1181](https://github.com/amruth1181)) — sole
+Built by **Vamshikrishna Gundu** ([@VamshiKrishnahub](https://github.com/VamshiKrishnahub)) — sole
 author and maintainer.
