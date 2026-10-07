@@ -18,15 +18,17 @@ this repo — the `.py` files are the source of truth.
 
 ## Live
 
+## Live
+
 | | |
 |---|---|
-| **App** (Streamlit Cloud) | <https://amre-engine-5pechonkoqr7zd7us4m5no.streamlit.app> |
-| **Engine** (FastAPI, HF Space) | <https://amruth1181-amre-engine-v3.hf.space> · [Space page](https://huggingface.co/spaces/amruth1181/amre-engine-v3) |
-| **Source** | <https://github.com/amruth1181/amre-engine> |
+| **App (Streamlit Cloud)** | https://adaptive-math-reasoning-engine.streamlit.app/ |
+| **Engine (FastAPI, Render)** | https://adaptive-math-reasoning-engine.onrender.com |
+| **API Health Check** | https://adaptive-math-reasoning-engine.onrender.com/health |
+| **Source** | https://github.com/vamshikrishnagundu/adaptive-math-reasoning-engine |
 
-User data lives in **Turso** (hosted libSQL), so it survives Space restarts. The
-free-tier Space sleeps when idle — the first request after a nap cold-starts the
-container, so give it a moment (`GET /health` wakes it).
+The frontend is deployed on **Streamlit Community Cloud**, while the **FastAPI backend** is deployed on **Render**. User data is persisted using **Turso (hosted libSQL)**. The Render free-tier service may spin down during periods of inactivity, so the first request after an idle period can take additional time while the backend starts.
+The application uses a Streamlit frontend and a FastAPI backend. The backend is containerized with Docker and configured for cloud deployment.
 
 **Core solve pipeline:** router → generation → PRM step-scoring → PRM-weighted
 consensus vote → isotonic calibration → per-user store.
